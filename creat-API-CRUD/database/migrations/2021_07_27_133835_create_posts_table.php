@@ -17,7 +17,8 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('titre');
             $table->string('description');
-            $table->text('contenu');
+            $table->string('date-creation');
+            $table->string('nombre-page');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('book');
     }
 }
