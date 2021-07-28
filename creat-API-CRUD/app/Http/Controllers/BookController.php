@@ -16,7 +16,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::paginate(10);
-        return BookResource::collection($books);
+        return $books;
     }
 
     /**
@@ -40,12 +40,12 @@ class BookController extends Controller
         $books = new book();
         $books->titre = $request->titre;
         $books->description = $request->description;
-        $books->dateCreation = $request->dateCreation;
-        $books->nombrePage = $request->nombrePage;
+        $books->date_publication = $request->date_publication;
+        $books->nombre_page = $request->nombre_page;
         $books->auteur = $request->auteur;
 
         if ($books->save() ) {
-            return new BookResource($books);
+            return $books;
         }
       }
 
@@ -57,8 +57,8 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        $books = Book::findFail($id);
-        return new BookResource($books);
+        $books = Book::findOrFail($id);
+        return $books;
     }
 
     /**
@@ -81,15 +81,15 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $books = Book::findFail($id);
+        $books = Book::findOrFail($id);
         $books->titre = $request->titre;
         $books->description = $request->description;
-        $books->dateCreation = $request->dateCreation;
-        $books->nombrePage = $request->nombrePage;
+        $books->date_publication = $request->date_publication;
+        $books->nombre_page = $request->nombre_page;
         $books->auteur = $request->auteur;
 
         if ($books->save() ) {
-            return new BookResource($books);
+            return $books;
         }
         
     }
@@ -102,9 +102,9 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $books = Book::findFail($id);
+        $books = Book::findOrFail($id);
         if($books->delete()){
-            return new BookResource($books);
+            return $books;
         }
     }
 }
