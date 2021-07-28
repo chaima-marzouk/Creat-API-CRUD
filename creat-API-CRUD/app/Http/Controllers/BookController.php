@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use APP\Http\Resources\BookResource;
 use App\Models\book;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        
+        $books = Book::paginate(10);
+        return BookResource::collection($books);
     }
 
     /**
@@ -35,8 +37,17 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $books = new book();
+        $books->titre = $request->titre;
+        $books->description = $request->description;
+        $books->dateCreation = $request->dateCreation;
+        $books->nombrePage = $request->nombrePage;
+        $books->auteur = $request->auteur;
+
+        if ($books->save() ) {
+            return new BookResource($books);
+        }
+      }
 
     /**
      * Display the specified resource.
@@ -44,9 +55,10 @@ class BookController extends Controller
      * @param  \App\Models\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(book $book)
+    public function show($id)
     {
-        //
+        $books = Book::findFail($id);
+        return new BookResource($books);
     }
 
     /**
@@ -67,9 +79,19 @@ class BookController extends Controller
      * @param  \App\Models\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, book $book)
+    public function update(Request $request, $id)
     {
-        //
+        $books = Book::findFail($id);
+        $books->titre = $request->titre;
+        $books->description = $request->description;
+        $books->dateCreation = $request->dateCreation;
+        $books->nombrePage = $request->nombrePage;
+        $books->auteur = $request->auteur;
+
+        if ($books->save() ) {
+            return new BookResource($books);
+        }
+        
     }
 
     /**
@@ -78,8 +100,11 @@ class BookController extends Controller
      * @param  \App\Models\book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(book $book)
+    public function destroy($id)
     {
-        //
+        $books = Book::findFail($id);
+        if($books->delete()){
+            return new BookResource($books);
+        }
     }
 }
