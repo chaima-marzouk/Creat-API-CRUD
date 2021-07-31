@@ -55,7 +55,7 @@
                     Open Library is an open project: the software is open, the data are open, the documentation is open, and we welcome your contribution. Whether you fix a typo, add a book, or write a widget--it's all welcome. We have a small team of fantastic programmers who have accomplished a lot, but we can't do it alone!
                     
                     
-        </p>
+                </p>
     
         
          <!-- tittre + icone livre -->
@@ -67,45 +67,45 @@
         <div ></div>
          <input name="myInput" id="myInput" placeholder="Search for Episodes" style="width: 500px; margin: auto; box-shadow: 2px rgb(0, 0, 0, 0);" onkeyup="myFunction()">
         <!-- Card -->
-<div class="container">
-    <div class="row ">
-        <div class="col-md-3">
-        <!-- <ul id="myUL"> -->
-            <div class="card text-center shadow m-4" style="width: 18rem;">
-                <img src="{{url('public\front\img\harry.jpg')}}" class="card-img-top" alt="">
-                <div class="card-body" >
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3">
+                <!-- <ul id="myUL"> -->
+                    <div class="card text-center shadow m-4" style="width: 18rem;">
+                        <img src="{{url('public\resources\frontimg\harry.jpg')}}" class="card-img-top" alt="">
+                        <div class="card-body" >
+                        
+                        <h5 class="card-title" id="element"></h5>
+                        
                 
-                <h5 class="card-title" id="element"></h5>
-                
-        
-                <p class="card-text text-center" ></p>
-               <!-- Button trigger modal -->
-                    <button type="button" class="btn text-white"  style="background-color: #0D4E6D;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Click to read more ...
-                    </button>
+                        <p class="card-text text-center" ></p>
+                    <!-- Button trigger modal -->
+                            <button type="button" class="btn text-white"  style="background-color: #0D4E6D;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Click to read more ...
+                            </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel"></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-                    </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div> 
                     </div>
                 </div>
                 </div> 
-             </div>
-          </div>
-        </div> 
-     </div>
-    
-</div>
+            </div>
+            
+        </div>
 
 
 <style>
