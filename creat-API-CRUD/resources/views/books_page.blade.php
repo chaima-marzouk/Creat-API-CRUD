@@ -35,7 +35,7 @@
                 </nav>
             </div>
     </header>
-    <div class="banner-area" style=" background-image: url({{ asset('storage/backG.jpg')}})">
+    <div class="banner-area" style=" background-image: url({{ asset('storage/back3.jpg')}})">
         <!-- <p>Vendue à plus de 450 millions d’exemplaires dans 200 pays</p> -->
         <div class="loading">
         <span>Vendue à plus de 450 millions d’exemplaires dans 200 pays</span>
@@ -233,7 +233,7 @@
         .loading span {
             position:relative;
             z-index:999;
-            color: #ffffff9e;
+            color: #0000009e;
             
         }
         .loading:before {

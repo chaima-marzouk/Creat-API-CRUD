@@ -37482,7 +37482,7 @@ var render = function() {
             [
               _c("img", {
                 staticClass: "card-img-top",
-                attrs: { src: "storage/back2.jpg", alt: "" }
+                attrs: { src: "storage/backG.jpg", alt: "" }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [

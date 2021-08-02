@@ -5,7 +5,7 @@
         <div class="col-md-3" v-for="book in books" :key="book.description">
         <!-- <ul id="myUL"> -->
             <div class="card text-center shadow m-4" style="width: 18rem;">
-                <img src="storage/back2.jpg" class="card-img-top" alt="">
+                <img src="storage/backG.jpg" class="card-img-top" alt="">
                 
                 <div class="card-body" >
                 
