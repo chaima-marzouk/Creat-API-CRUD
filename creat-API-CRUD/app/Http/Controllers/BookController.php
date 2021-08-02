@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use APP\Http\Resources\BookResource;
 use App\Models\book;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use APP\Http\Resources\BookResource;
 
 class BookController extends Controller
 {
@@ -15,8 +17,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = book::paginate(10);
+        $books = book::all();
         return $books;
+        // return BookResource::collection(book::all());
     }
 
     /**
@@ -107,4 +110,24 @@ class BookController extends Controller
             return $books;
         }
     }
+
+    public function getPubliclyStorgeFile($filename)
+
+{
+    $path = storage_path('app/front/img/'. $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+
+    $response->header("Content-Type", $type);
+
+    return $response;
+
+}
 }

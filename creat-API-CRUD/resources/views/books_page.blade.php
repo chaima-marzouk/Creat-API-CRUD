@@ -12,6 +12,8 @@
     
 <body>
     <div class="box-area">
+        {{-- <img src="{{ asset("storage/back2.jpg")}}"  alt="" title=""> --}}
+
         <header>
            <div class="wrapper"> 
                 <div class="logo">
@@ -22,7 +24,7 @@
                     
                     <a href="">Contact</a>
                     <a href="#about">About</a>
-                    <a href="#book">Episodes</a>
+                    <a href="#book">Books</a>
 
                         <a href=""> <button
                         type="submit" value="submit" name="submit_add" 
@@ -33,7 +35,7 @@
                 </nav>
             </div>
     </header>
-    <div class="banner-area">
+    <div class="banner-area" style=" background-image: url({{ asset('storage/backG.jpg')}})">
         <!-- <p>Vendue à plus de 450 millions d’exemplaires dans 200 pays</p> -->
         <div class="loading">
         <span>Vendue à plus de 450 millions d’exemplaires dans 200 pays</span>
@@ -44,8 +46,9 @@
     <div class="content-area row">
         
         <h2 id='about' class="">About Us</h2>
-        {{-- <img class="col-6 " style=" width: 60vh; margin: 5vh 20vh"src="{{url('public/front/img/book.jpeg')}}" alt="book"> --}}
-                <p class="col-5 text-dark" style="margin-top: 3vh; font-family: bignoodleftling; margin-left: 30%;">
+        <img class="col-6 " style=" width: 60vh; margin: 5vh 20vh"src="{{ asset("storage/cotton.jpg")}}" alt="book">
+                <p class="col-5 text-dark" style="margin-top: 22vh;font-size: 23px;
+                font-family: "Brush Script MT", cursive;">
                     One web page for every book ever published. It's a lofty but achievable goal.
 
                     To build Open Library, we need hundreds of millions of book records, a wiki interface, and lots of people who are willing to contribute their time and effort to building the site.
@@ -64,48 +67,16 @@
             </svg> 
         </h1>
         //  <!-- barre de recherche -->
-        <div ></div>
-         <input name="myInput" id="myInput" placeholder="Search for Episodes" style="width: 500px; margin: auto; box-shadow: 2px rgb(0, 0, 0, 0);" onkeyup="myFunction()">
-        <!-- Card -->
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-3">
-                <!-- <ul id="myUL"> -->
-                    <div class="card text-center shadow m-4" style="width: 18rem;">
-                        <img src="{{url('public\resources\frontimg\harry.jpg')}}" class="card-img-top" alt="">
-                        <div class="card-body" >
-                        
-                        <h5 class="card-title" id="element"></h5>
-                        
-                
-                        <p class="card-text text-center" ></p>
-                    <!-- Button trigger modal -->
-                            <button type="button" class="btn text-white"  style="background-color: #0D4E6D;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Click to read more ...
-                            </button>
+         {{-- <input name="myInput" id="myInput" placeholder="Search for Episodes" style="width: 500px; margin: auto; box-shadow: 2px rgb(0, 0, 0, 0);" onkeyup="myFunction()"> --}}
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"></h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
-                            </div>
-                            </div>
-                        </div>
-                        </div> 
-                    </div>
-                </div>
-                </div> 
-            </div>
-            
+         <div id="app">
+            <front-page></front-page>
         </div>
+
+        
+    </div>
+   
+       
 
 
 <style>
@@ -188,7 +159,7 @@
             height: 500px;
             position: fixed;
             top: 100px;
-            background-image: url(../img/pexels-dzenina-lukac-1005012.jpg);
+            
             -webkit-background-size: cover;
             background-position: center center;
 
@@ -211,7 +182,7 @@
             font-family: "Brush Script MT", cursive;
         }
         .content-area{
-            width: 212vh;
+            width: auto;
             position: relative;
             top: 450px;
             background: #ddd;
@@ -262,7 +233,7 @@
         .loading span {
             position:relative;
             z-index:999;
-            color:rgb(0, 0, 0);
+            color: #ffffff9e;
             
         }
         .loading:before {
@@ -307,5 +278,8 @@
 </style>
      
     
+
+
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
